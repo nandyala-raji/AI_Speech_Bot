@@ -139,3 +139,330 @@
 </script>
   </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+/*Try to implement this
+
+<!DOCTYPE html>
+<html>
+  <title>Aviva Bot</title>
+  <head>
+    <link
+      rel="shortcut icon"
+      #type="image/x-icon"
+      #href="https://user-images.githubusercontent.com/20112458/49326597-773b7280-f57a-11e8-853d-20ed61d18b0d.png"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+     <!-- Latest compiled JavaScript -->
+     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	 <!-- Chart.js -->
+	 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.js"></script>
+    <style>
+	canvas{
+	type: 'bar',
+    data: {
+        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+        datasets: [{
+            label: '# of Votes',
+            data: [12, 19, 3, 5, 2, 3],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.8)',
+                'rgba(54, 162, 235, 0.8)',
+                'rgba(255, 206, 86, 0.8)',
+                'rgba(75, 192, 192, 0.8)',
+                'rgba(153, 102, 255, 0.8)',
+                'rgba(255, 159, 64, 0.8)'
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true
+                }
+            }]
+        }
+    }
+});
+	}
+      body {
+        font-family: monospace;
+        background-image: url('https://i.pinimg.com/originals/fb/7b/15/fb7b15a16556fdb46ba629aa02d03434.jpg');
+      }
+      h1 {
+        background-color: yellow;
+        display: inline-block;
+        font-size: 2em;
+        margin: 10;
+        padding: 10px;
+		border-radius:10px;
+      }
+      h3 {
+        color: black;
+        font-size: 20px;
+        margin-top: 3px;
+        text-align: center;
+      }
+      #chatbox {
+        margin-left: auto;
+        margin-right: auto;
+        width: 40%;
+		margin-top: 60px;
+      }
+      #userInput {
+        margin-left: auto;
+        margin-right: auto;
+        width: 40%;
+        margin-top: 60px;
+      }
+      #textInput {
+        width: 90%;
+        border: none;
+        border-bottom: 3px solid black;
+        font-family: monospace;
+        font-size: 17px;
+      }
+      .userText {
+        color: white;
+        font-family: monospace;
+        font-size: 17px;
+        text-align: right;
+        line-height: 30px;
+      }
+      .userText span {
+         background-color: #73AD21;
+         border-radius: 25px ;
+		 border: 2px solid #73AD21;
+		 padding: 10px;
+      }
+      .botText {
+        color: white;
+        font-family: monospace;
+        font-size: 14px;
+        text-align: left;
+        line-height: 40px;
+      }
+      .botText span {
+	    background-color: #4169e1;
+        padding: 10px;
+        border-radius: 20px;
+      }
+      #tidbit {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 300px;
+      }
+      .boxed {
+        margin-left: auto;
+        margin-right: auto;
+        width: 78%;
+		margin-top: 60px;
+        border:  #green;
+		background: rgba(76, 175, 80, 0.3);
+
+      }
+      .box {
+        border: #black;
+		
+		      }
+    </style>
+  </head>
+  <body>
+    <img />
+    <center>
+      <h1>
+        <img
+          src="http://www.aviva.com/content/dam/aviva-corporate/images/5273_Aviva_stacked_logo_-_RGB_-_transparent_png%20(3).png"
+          alt="PLMO"
+          style="width:40px;height:35px;"
+        />Aviva AI Bot
+      </h1>
+    </center>
+    <div class="box"></div>
+    <div class="boxed">
+      <div>
+        <div id="chatbox">
+         <!--<center> <img
+            src="https://www.ft.com/__origami/service/image/v2/images/raw/https%3A%2F%2Fs3-eu-west-1.amazonaws.com%2Ffta-ez-prod%2Fez%2Fimages%2F2%2F7%2F7%2F9%2F1219772-1-eng-GB%2Faviva+%282%29.jpg%3Fv1?width=700&source=ftadviser"
+            alt="PLMO"
+            style="width:40px;height:40px;"
+          /></center>-->
+		    <p class="botText">
+            <span>Hi! I'm PLMO your personal ChatBot</span> <br> <br>
+			<!--button type="button" style="width:30%;height:120px" class="btn btn-danger">Speak</button>
+			<button type="button" style="width:30%;height:120px" class="btn btn-danger">Speak</button>
+			<button type="button" style="width:30%;height:120px" class="btn btn-danger">Speak</button-->
+          </p>
+        </div>
+        <div id="userInput">
+          <input id="textInput" type="text" style="width:80%" name="msg" placeholder="Message" />
+          <span><button type="button" id="jolly" class="btn btn-warning" onclick=reload($(this.id))>Speak</button></span>
+        </div>
+      </div>
+      <script>
+	    //***********************chart.js scripts************************//
+		<!--function reload(data){-->
+		/*console.log(data)
+var ctx = document.getElementById('myChart').getContext('2d');
+var myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+        datasets: [{
+            label: '# of Votes',
+            data: [12, 19, 3, 5, 2, 3],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.8)',
+                'rgba(54, 162, 235, 0.8)',
+                'rgba(255, 206, 86, 0.8)',
+                'rgba(75, 192, 192, 0.8)',
+                'rgba(153, 102, 255, 0.8)',
+                'rgba(255, 159, 64, 0.8)'
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true
+                }
+            }]
+        }
+    }
+});
+}
+*/
+	//***************************************************************//
+	    function filldata(data) //to fill data holded by the function 
+		{
+		console.log(data);
+		$("#textInput").val(data); 
+		getBotResponse();
+		}
+        function getBotResponse() {
+          var rawText = $("#textInput").val();  //getting  the user input
+          var userHtml = '<p class="userText"><span>' + rawText + "</span></p>";  //creating html for displaying the user input
+		  if (rawText=='report') {
+		  console.log(rawText);
+         // var userHtml = '<p class="userText"><span>' + rawText + "</span></p><canvas id='myChart' width='100%' height='100%' onclick=reload($(this).id()) ></canvas>";
+          }
+		  else
+		  {
+		  var userHtml = "<p class='userText'><span>" + rawText + "</span> <br> <br><button type='button'  onclick=filldata($(this).text()) style='width:20%;height:50px;border-radius:10px;float:left' class='btn btn-success'>Speak</button>&nbsp;&nbsp;<button type='button' onclick=filldata($(this).text()) style='width:20%;height:50px;border-radius:10px;float:left;margin-left:5px;' class='btn btn-danger'>Say</button>&nbsp<button type='button' onclick=filldata($(this).text()) style='width:20%;height:50px;border-radius:10px;float:left;margin-left:5px;' class='btn btn-warning'>Tell</button></p>";
+		  }
+		  //$(this).text() give the value of the current div
+          $("#textInput").val(""); //making the value null
+          $("#chatbox").append(userHtml); //appending the html to the chatbot div
+          document.getElementById("userInput").scrollIntoView({ block: "start", behavior: "smooth" });  //scrolls the uer input to the view
+          //$.get("/get", { msg: rawText }).done(function(data) {    // function gets the get response and appends the data to the view
+           // var botHtml = '<p class="botText"><span>' + data + "</span></p>";
+            //$("#chatbox").append(botHtml);
+            //document
+              //.getElementById("userInput")
+              //.scrollIntoView({ block: "start", behavior: "smooth" });
+          //});
+        }
+        $("#textInput").keypress(function(e) {
+          if (e.which == 13) {
+            getBotResponse();
+          }
+		  if(e.keyCode == 13 && rawText == "report"){
+		   $("#textInput").click();
+		  }
+        });
+		$("#textInput").click(function()
+		{
+		myFunction();
+		});
+		function myFunction()
+		{
+		var dchart=document.createElement("CANVAS");
+		var ctx = document.getElementById('myChart').getContext('2d');
+		var myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+        datasets: [{
+            label: '# of Votes',
+            data: [12, 19, 3, 5, 2, 3],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.8)',
+                'rgba(54, 162, 235, 0.8)',
+                'rgba(255, 206, 86, 0.8)',
+                'rgba(75, 192, 192, 0.8)',
+                'rgba(153, 102, 255, 0.8)',
+                'rgba(255, 159, 64, 0.8)'
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true
+                }
+            }]
+        }
+    }
+});
+		document.body.appendChild(dchart);
+		
+		
+		<!-- chart-->
+		}
+		
+      </script>
+    </div>
+  </body>
+</html>
+*/
+
+
+
+
