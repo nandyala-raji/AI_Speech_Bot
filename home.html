@@ -1,23 +1,41 @@
 <!DOCTYPE html>
 <html>
- <title>Aviva Bot</title>
-<head>
+  <title>Aviva Bot</title>
+  <head>
+  
     <link
       rel="shortcut icon"
-      type="image/x-icon"
-      href="https://icon2.cleanpng.com/20181125/fip/kisspng-logo-vector-graphics-aviva-ltd-insurance-building-strong-relationships-with-our-clients-t-5bfa872c663682.7202373815431452604187.jpg"
+      #type="image/x-icon"
+      #href="https://user-images.githubusercontent.com/20112458/49326597-773b7280-f57a-11e8-853d-20ed61d18b0d.png"
     />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <style>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+     <!-- Latest compiled JavaScript -->
+     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	 <!-- Chart.js -->
+	 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.js"></script>
+    
+	<style>
+	
+	
       body {
+	
         font-family: monospace;
+        background-image: url('https://i.pinimg.com/originals/fb/7b/15/fb7b15a16556fdb46ba629aa02d03434.jpg');
       }
+	
       h1 {
         background-color: yellow;
         display: inline-block;
-        font-size: 3em;
-        margin: 0;
-        padding: 14px;
+        font-size: 2em;
+        margin: 10;
+        padding: 10px;
+		border-radius:10px;
       }
       h3 {
         color: black;
@@ -29,7 +47,7 @@
         margin-left: auto;
         margin-right: auto;
         width: 40%;
-        margin-top: 60px;
+		margin-top: 60px;
       }
       #userInput {
         margin-left: auto;
@@ -52,21 +70,23 @@
         line-height: 30px;
       }
       .userText span {
-        background-color: #808080;
-        padding: 10px;
-        border-radius: 2px;
+         background-color: #73AD21;
+         border-radius: 25px ;
+		 border: 2px solid #73AD21;
+		 padding: 10px;
+		 width: auto;
       }
       .botText {
         color: white;
         font-family: monospace;
-        font-size: 17px;
+        font-size: 12px;
         text-align: left;
-        line-height: 30px;
+        line-height: 40px;
       }
       .botText span {
-        background-color: #4169e1;
+	    background-color: #4169e1;
         padding: 10px;
-        border-radius: 2px;
+        border-radius: 5px;
       }
       #tidbit {
         position: absolute;
@@ -78,64 +98,172 @@
         margin-left: auto;
         margin-right: auto;
         width: 78%;
-        margin-top: 60px;
-        border: 1px solid green;
+	margin-top: 60px;
+        border:  #green;
+	overflow-y: scroll;
+  	height: 80vh; 
+
+		
+
       }
       .box {
-        border: 2px solid black;
+        border: #black;
+		
+ }
+	.triangle-down {
+	width: 0;
+	height: 0;
+	border-left: 25px solid transparent;
+	border-right: 25px solid transparent;
+	border-top: 50px solid #555;
+}
+
+	
+      @keyframes example {       //animation for user_nam div
+        from {left: 0%;}
+        to {left: 30%;}
+         }
+      #user_nam {
+        background-color:blue;
+        width: 600px;
+        height: 450px;
+        position: absolute;
+        opacity: 1.0;
+        top: 18%;
+        left: -90%;
+        z-index: 1;
+
+        border-style: solid;
+        border-width: 5px;
+        animation-name: example;
+        animation-duration: 3s;
+        animation-timing-function: linear;
+        animation-fill-mode: forwards;
       }
+
     </style>
   </head>
- <body>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> <!-- library for icons-->
+   
+  <body>
+     <img />
     <center>
       <h1>
         <img
-          src="https://icon2.cleanpng.com/20181125/fip/kisspng-logo-vector-graphics-aviva-ltd-insurance-building-strong-relationships-with-our-clients-t-5bfa872c663682.7202373815431452604187.jpg"
-          alt="Aviva"
-          style="width:40px;height:40px;"
-        />Your Personal ChatBot
+          src="http://www.aviva.com/content/dam/aviva-corporate/images/5273_Aviva_stacked_logo_-_RGB_-_transparent_png%20(3).png"
+          alt="PLMO"
+          style="width:40px;height:35px;"
+        />Aviva AI Bot
       </h1>
     </center>
-<div class="box"></div>
+    <div class="box"></div>
     <div class="boxed">
       <div>
         <div id="chatbox">
-          <img
-            src="https://icon2.cleanpng.com/20181125/fip/kisspng-logo-vector-graphics-aviva-ltd-insurance-building-strong-relationships-with-our-clients-t-5bfa872c663682.7202373815431452604187.jpg"
-            alt="Aviva"
+         <p class="botText"> <img
+            src="https://www.ft.com/__origami/service/image/v2/images/raw/https%3A%2F%2Fs3-eu-west-1.amazonaws.com%2Ffta-ez-prod%2Fez%2Fimages%2F2%2F7%2F7%2F9%2F1219772-1-eng-GB%2Faviva+%282%29.jpg%3Fv1?width=700&source=ftadviser"
+            alt="PLMO"
             style="width:40px;height:40px;"
-          />
-          <p class="botText">
-            <span>Hi! I'm PLMO your personal ChatBot</span>
-          </p>
+          /><span id="welcome">Hi! I'm PLMO your personal ChatBot</span></p>
+		  
+         <!-- </p>-->
         </div>
         <div id="userInput">
-          <input id="textInput" type="text" name="msg" placeholder="Message" />
+          <input id="textInput" type="text" style="width:80%;border-radius:5px" name="msg" placeholder=" &nbsp;&nbsp; Type Something here..." />
+          <span><button type="button" id="jolly" class="btn btn-warning" onclick=reload($(this.id))>Speak</button></span>
         </div>
       </div>
-    </div>
- <script>
+
+	  <!-- this div will be used to take the user name as input   -->
+      <div id="user_nam">
+	<p style="color:white;" >Hi Please Enter your Full Name for knowing you :)</p>
+        <input id="username" type="text" style="width:40%;buttom: 60%;
+        left: 10%;position: relative;;" name="msg" placeholder="Please type your  full name" />
+	<input id="button" type="button"  style="width:20%;top: 60%;
+        left: 10%;position: relative;;" name="button" value="Submit" />
+	<input id="skip" type="button"  style="width:20%;top: 60%;
+        left: 15%;position: relative;;" name="skip" value="Skip" />
+      </div>
+      
+      <script>
+	    //***********************chart.js scripts************************//
+		<!--function reload(data){-->
+		
+	//***************************************************************//
+	    function filldata(data) //to fill data holded by the function 
+		{
+		console.log(data);
+		$("#textInput").val(data); 
+		getBotResponse();
+		}
+   var usrNam = "";
+    function getname()   //to get the user name inputed at the begining
+    {
+    usrNam=$("#username").val();
+  console.log(usrNam);
+    }
+
+
         function getBotResponse() {
-          var rawText = $("#textInput").val();
-          var userHtml = '<p class="userText"><span>' + rawText + "</span></p>";
-          $("#textInput").val("");
-          $("#chatbox").append(userHtml);
-          document
-            .getElementById("userInput")
-            .scrollIntoView({ block: "start", behavior: "smooth" });
-          $.get("/get", { msg: rawText }).done(function(data) {
-            var botHtml = '<p class="botText"><span>' + data + "</span></p>";
-            $("#chatbox").append(botHtml);
-            document
-              .getElementById("userInput")
-              .scrollIntoView({ block: "start", behavior: "smooth" });
-          });
+          var rawText = $("#textInput").val();  //getting  the user input
+         var userHtml = '<p class="userText"><span>' + rawText + '</span><span style="background-color:red;">'+usrNam[0].toUpperCase()+"</span></p>";  //creating html for displaying the user input
+        $("#textInput").val(""); //making the value null
+          $("#chatbox").append(userHtml); //appending the html to the chatbot div
+	var userHtml = "<p class='userText'><br> <br><button type='button'  onclick=filldata($(this).text()) style='width:20%;height:50px;border-radius:10px;float:left' class='btn btn-success'><i class='fa fa-home'></i>Speak</button>&nbsp;&nbsp;<button type='button' onclick=filldata($(this).text()) style='width:20%;height:50px;border-radius:10px;float:left;margin-left:5px;' class='btn btn-danger'>Say</button>&nbsp<button type='button' onclick=filldata($(this).text()) style='width:20%;height:50px;border-radius:10px;float:left;margin-left:5px;' class='btn btn-warning'>Tell</button></p>";
+         $("#chatbox").append(userHtml);
+ //document.getElementById("userInput").scrollIntoView({ block: "start", behavior: "smooth" });  //scrolls the uer input to the view
+         
         }
         $("#textInput").keypress(function(e) {
           if (e.which == 13) {
             getBotResponse();
           }
+		  if(e.keyCode == 13 && rawText == "report"){
+		   $("#textInput").click();
+		  }
         });
-</script>
+		$("#textInput").click(function()
+		{
+		myFunction();
+		});
+
+	$("#username").keypress(function(e) {
+            if (e.which == 13) {
+              getname();
+		if(usrNam=="")
+		{
+		usrNam="There";
+		}
+				
+                $("#username").val("");
+                document.getElementById("user_nam").style.display='none';
+                $("#welcome").text("Hi! "+usrNam.toUpperCase()+" I'm PLMO your personal ChatBot");
+            }
+	});
+	 $("#button").click(function()  {
+         
+              getname();
+                $("#username").val("");
+                document.getElementById("user_nam").style.display='none';
+		if(usrNam=="")
+		{
+		usrNam="There";
+		}
+                $("#welcome").text("Hi! "+usrNam.toUpperCase()+" I'm PLMO your personal ChatBot");
+        
+        });
+
+	 $("#skip").click(function()  {
+         
+             	usrNam="There";
+		document.getElementById("user_nam").style.display='none';
+                $("#welcome").text("Hi! "+usrNam.toUpperCase()+" I'm PLMO your personal ChatBot");
+        
+        });
+
+		
+		
+      </script>
+    </div>
   </body>
 </html>
