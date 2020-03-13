@@ -243,11 +243,17 @@ border-radius: 50%;}
 	$("#username").keypress(function(e) {
             if (e.which == 13) {
               getname();
-				
+		
                 $("#username").val("");
                 document.getElementById("user_nam").style.display='none';
+		if(usrNam=="Dude")
+		{alert("Enter Name First or click Skip");
+location.reload();
+}
+else{	
                 $("#welcome").text("Hi! "+usrNam.toUpperCase()+" I'm PLMO your personal ChatBot");
-            }
+         }
+   }
 	});
 	 $("#button").click(function()  {
          
@@ -277,6 +283,7 @@ else{
 	$("#close").click(function()  {
          	usrNam="Dude";
                 document.getElementById("user_nam").style.display='none';
+ $("#welcome").text("Hi "+usrNam.toUpperCase()+"!it's ok, don't reveal ur name, i can help you");
                                           
         
         });
